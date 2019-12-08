@@ -1,0 +1,38 @@
+.Welcome {
+    width: 100%;
+    padding: 30px 20px;
+    font-size: 2rem;
+    background-color: rgba(128, 0, 128, 0.664);
+    color: white;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.Welcome p {
+    margin: 10px 0;
+}
+
+.RulesButton,
+.RulesButton:active {
+    margin: 0 10px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid green;
+}
+.RulesButton:hover:not(:active) {
+    background-color: green;
+    color: white;
+}
+
+.NewGameButton,
+.NewGameButton:active {
+    background-color: green;
+    color: white;
+    margin: 0 10px;
+    border: 2px solid green;
+}
+.NewGameButton:hover:not(:active) {
+    background-color: transparent;
+    color: white;
+    border: 2px solid green;
+}

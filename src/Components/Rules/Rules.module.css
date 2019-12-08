@@ -1,0 +1,19 @@
+.Rules {
+    width: 600px;
+    max-width: 80vw;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(128, 0, 128, 0.9);
+    color: white;
+    box-sizing:  0 0 100px rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.Rules p {
+    text-align: left;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,13 @@
+.ErrorContainer {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: rgba(167, 0, 0, 0.9);
+    padding: 20px 40px;
+    color: white;
+    font-size: 1.3rem;
+}
