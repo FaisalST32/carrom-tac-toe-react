@@ -5,10 +5,10 @@ const Box = props => {
     let boxClasses = [classes.Box];
 
     if (props.checked && props.player === 1) {
-        boxClasses.push(classes.Checked, classes.BlackChecked);
+        boxClasses = [classes.Checked, classes.BlackChecked];
     }
     else if (props.checked && props.player === 2) {
-        boxClasses.push(classes.Checked, classes.WhiteChecked);
+        boxClasses = [classes.Checked, classes.WhiteChecked];
     }
     
     if (props.isAvailableMove) {
