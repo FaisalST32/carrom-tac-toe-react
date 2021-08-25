@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Box.module.css'
 
 const Box = props => {
-    let boxContent = '';
     let boxClasses = [classes.Box];
 
     if (props.checked && props.player === 1) {
