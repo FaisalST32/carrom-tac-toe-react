@@ -4,11 +4,12 @@ import classes from './Box.module.css'
 const Box = props => {
     let boxContent = '';
     let boxClasses = [classes.Box];
+
     if (props.checked && props.player === 1) {
-        boxContent = <div className={[classes.Checked, classes.BlackChecked].join(' ')}></div>
+        boxClasses.push(classes.Checked, classes.BlackChecked);
     }
     else if (props.checked && props.player === 2) {
-        boxContent = <div className={[classes.Checked, classes.WhiteChecked].join(' ')}></div>
+        boxClasses.push(classes.Checked, classes.WhiteChecked);
     }
     
     if (props.isAvailableMove) {
@@ -19,9 +20,13 @@ const Box = props => {
         boxClasses.push(classes.IsSelected)
     }
 
+    if (!props.isActive) {
+        boxClasses.push(classes.Inactive);
+    }
+
     return (
         <div className={boxClasses.join(' ')} onClick={props.clicked}>
-            {boxContent}
+            <div className={boxClasses.join(' ')}></div>
         </div>
     )
 }

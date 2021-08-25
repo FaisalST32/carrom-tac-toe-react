@@ -263,12 +263,15 @@ export default class Game extends Component {
         const boxes = this.state.boxes.map(box => {
             const boxAvailable = this.state.availableMoves.some(availableCoord => availableCoord === box.coords);
             const boxSelected = this.state.boxSelectedCoords === box.coords;
+            const isActive = this.state.currentPlayer === box.player;
             return (
                 <Box {...box}
                     key={box.coords}
                     clicked={this.onCheckBox.bind(this, box.coords)}
                     isAvailableMove={boxAvailable}
-                    isSelected={boxSelected}></Box>
+                    isSelected={boxSelected}
+                    isActive={isActive}
+                    ></Box>
             )
         });
 
