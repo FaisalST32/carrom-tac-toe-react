@@ -2,21 +2,22 @@ import React from 'react';
 import classes from './Box.module.css'
 
 const Box = props => {
-    let boxClasses = [classes.Box];
+    let containerClasses = [classes.Box];
+        
+    if (props.isAvailableMove) {
+        containerClasses.push(classes.IsAvailable);
+    }
 
+    if (props.isSelected) {
+        containerClasses.push(classes.IsSelected)
+    }
+
+    let boxClasses = [];
     if (props.checked && props.player === 1) {
         boxClasses = [classes.Checked, classes.BlackChecked];
     }
     else if (props.checked && props.player === 2) {
         boxClasses = [classes.Checked, classes.WhiteChecked];
-    }
-    
-    if (props.isAvailableMove) {
-        boxClasses.push(classes.IsAvailable);
-    }
-
-    if (props.isSelected) {
-        boxClasses.push(classes.IsSelected)
     }
 
     if (!props.isActive) {
@@ -24,7 +25,7 @@ const Box = props => {
     }
 
     return (
-        <div className={boxClasses.join(' ')} onClick={props.clicked}>
+        <div className={containerClasses.join(' ')} onClick={props.clicked}>
             <div className={boxClasses.join(' ')}></div>
         </div>
     )
