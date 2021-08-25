@@ -257,13 +257,13 @@ export default class Game extends Component {
         }))
     }
 
-    
+
 
     render() {
         const boxes = this.state.boxes.map(box => {
             const boxAvailable = this.state.availableMoves.some(availableCoord => availableCoord === box.coords);
             const boxSelected = this.state.boxSelectedCoords === box.coords;
-            const isActive = this.state.currentPlayer === box.player;
+            const isActive = this.state.remainingDiscs.player1 > 0 || this.state.remainingDiscs.player2 > 0 || this.state.currentPlayer === box.player;
             return (
                 <Box {...box}
                     key={box.coords}
@@ -271,7 +271,7 @@ export default class Game extends Component {
                     isAvailableMove={boxAvailable}
                     isSelected={boxSelected}
                     isActive={isActive}
-                    ></Box>
+                ></Box>
             )
         });
 
@@ -289,7 +289,7 @@ export default class Game extends Component {
                         gameover={this.state.isGameOver}
                         newGame={this.onNewGame}
                         winner={this.state.winner} />
-                    <Rules show={this.state.showRules} toggleRules={this.onToggleRules}  />
+                    <Rules show={this.state.showRules} toggleRules={this.onToggleRules} />
                 </div>
             </div>
         )
